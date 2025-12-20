@@ -1,71 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Om Kumbhar | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Kumbhar | Finance & Compliance Professional</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* HERO SECTION */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(
-        -45deg,
-        #0f2027,
-        #203a43,
-        #2c5364,
-        #1e90ff
-      );
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-    }
+/* BODY */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f4f7fb;
+  color: #333;
+  overflow-x: hidden;
+}
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+/* SMOKY CURSOR */
+.cursor {
+  width: 18px;
+  height: 18px;
+  background: rgba(30,144,255,0.6);
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(6px);
+  transform: translate(-50%, -50%);
+  transition: 0.08s ease;
+  z-index: 9999;
+}
 
-    .hero-content h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
-      animation: fadeDown 1.2s ease forwards;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e90ff);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
 
-    .hero-content p {
-      font-size: 20px;
-      opacity: 0;
-      animation: fadeUp 1.2s ease forwards;
-      animation-delay: 0.5s;
-    }
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+.hero h1 {
+  font-size: 56px;
+  animation: fadeDown 1.2s ease forwards;
+}
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 0.4s;
+}
 
-    section {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 30px;
-    }
-  </st.contact {
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: 60px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+section h2 {
+  color: #0f4c81;
+  margin-bottom: 15px;
+  border-left: 5px solid #1e90ff;
+  padding-left: 10px;
+}
+
+section p, li {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/* CONTACT */
+.contact {
   text-align: center;
 }
 
@@ -76,12 +116,10 @@
   padding: 25px 40px;
   border-radius: 12px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-  animation: fadeUp 1s ease forwards;
 }
 
 .contact-card p {
   margin: 12px 0;
-  font-size: 16px;
 }
 
 .contact-card a {
@@ -93,113 +131,105 @@
 .contact-card a:hover {
   text-decoration: underline;
 }
-</sty.site-footer {
+
+/* FOOTER */
+footer {
   margin-top: 60px;
   padding: 30px 20px;
   background: #0f2027;
-  color: #ffffff;
+  color: white;
   text-align: center;
 }
 
-.site-footer p {
-  margin: 6px 0;
+footer p {
   font-size: 14px;
   opacity: 0.9;
-}
-
-.site-footer .copyright {
-  font-size: 13px;
-  opacity: 0.7;
 }
 </style>
 </head>
 
 <body>
 
-  <!-- HERO FIRST PAGE -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Hey! I’m Om Kumbhar</h1>
-      <p>Finance & Compliance Professional
-    </div>
+<div class="cursor"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Om Kumbhar</h1>
+    <p>Finance & Compliance Professional</p>
   </div>
+</div>
 
-  <!-- REST OF CONTENT -->
-  <section>
-     </p>
-</body>
-</html>>
-
+<!-- ABOUT -->
 <section>
-    <h1>About Me</h2>
-    <p>
-        I am a CS Executive , MBA finance ( Pursuing ) and compliance professional with experience in corporate operations,
-        regulatory filings, and statutory compliance. I specialize in tax processes,
-        business registrations, workflow optimization, and strategic execution.
-    </p>
+  <h2>About Me</h2>
+  <p>
+    I am a CS Executive and MBA (Finance – Pursuing) professional with experience in
+    corporate operations, statutory compliance, and regulatory filings. I specialize in
+    tax processes, business registrations, workflow optimization, and strategic execution.
+  </p>
 </section>
 
+<!-- SKILLS -->
 <section>
-    <h2>Skills</h2>
-    <ul>
-        <li>Compliance & Tax Filing</li>
-        <li>Financial Analysis</li>
-        <li>Business Registration (Company / LLP)</li>
-        <li>GST & Income Tax Returns</li>
-        <li>Regulatory & ROC Filings</li>
-    </ul>
+  <h2>Skills</h2>
+  <ul>
+    <li>Compliance & Tax Filing</li>
+    <li>Financial Analysis</li>
+    <li>Business Registration (Company / LLP)</li>
+    <li>GST & Income Tax Returns</li>
+    <li>Regulatory & ROC Filings</li>
+  </ul>
 </section>
 
+<!-- EXPERIENCE -->
 <section>
-    <h2>Experience</h2>
-    <p><strong>Audit Intern – Sany Heavy Industry India Pvt.Ltd
-       <ul>
-      <li>3 Months 
-        compliance and regulatory operations</li>
-    </strong>Junior Executive - CS Prashant Pange & Associates
-       <ul>
-        <li>1.6 Year
-          Managed statutory filings and tax compliance</li>
-   </strong> Junior Accountant - Sahara Industries Shirwal </p>
-    <ul>
-        <li>6 Months
-          Supported strategic and operational decision-making</li>
-    </ul>
+  <h2>Experience</h2>
+  <ul>
+    <li><strong>Audit Intern – Sany Heavy Industry India Pvt. Ltd</strong> (3 Months)</li>
+    <li><strong>Junior Executive – CS Prashant Pange & Associates</strong> (1.6 Years)</li>
+    <li><strong>Junior Accountant – Sahara Industries, Shirwal</strong> (6 Months)</li>
+  </ul>
 </section>
 
+<!-- SERVICES -->
 <section>
-    <h2>Services</h2>
-    <ul>
-        <li>Income Tax Filing</li>
-        <li>GST Registration & Returns</li>
-        <li>Company / LLP Registration</li>
-        <li>Compliance & ROC Services</li>
-        <li>Business Advisory</li>
-    </ul>
+  <h2>Services</h2>
+  <ul>
+    <li>Income Tax Filing</li>
+    <li>GST Registration & Returns</li>
+    <li>Company / LLP Registration</li>
+    <li>Compliance & ROC Services</li>
+    <li>Business Advisory</li>
+  </ul>
 </section>
+
+<!-- CONTACT -->
 <section class="contact">
   <h2>Contact</h2>
-
   <div class="contact-card">
     <p><strong>Phone:</strong> <a href="tel:+919172046662">+91 91720 46662</a></p>
     <p><strong>Email:</strong> <a href="mailto:omkumbhar511@gmail.com">omkumbhar511@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong> 
+    <p><strong>LinkedIn:</strong>
       <a href="https://www.linkedin.com/in/om-kumbhar511" target="_blank">
         linkedin.com/in/om-kumbhar511
       </a>
     </p>
   </div>
-</style>
+</section>
 
 <footer>
-    <footer class="site-footer">
   <p>Open to professional opportunities and consulting engagements</p>
-  <p class="copyright">
-    © 2025 Om Kumbhar. All rights reserved.
-  </p>
+  <p>© 2025 Om Kumbhar. All rights reserved.</p>
 </footer>
-.
-</footer>
+
+<script>
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.pageX + "px";
+  cursor.style.top = e.pageY + "px";
+});
+</script>
 
 </body>
 </html>
