@@ -1,141 +1,97 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<h<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om Kumbhar | Portfolio</title>
 
-<style>
-/* HERO SECTION */
-.hero {
-  height: 100vh;
-  background: linear-gradient(
-    -45deg,
-    #0f2027,
-    #203a43,
-    #2c5364,
-    #1e90ff
-  );
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(
+        -45deg,
+        #0f2027,
+        #203a43,
+        #2c5364,
+        #1e90ff
+      );
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
 
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-.hero-content p {
-  font-size: 20px;
-  opacity: 0.9;
-}
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      animation: fadeDown 1.2s ease forwards;
+    }
 
-.animate-text {
-  animation: fadeSlideDown 1.2s ease forwards;
-}
+    .hero-content p {
+      font-size: 20px;
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards;
+      animation-delay: 0.5s;
+    }
 
-.animate-subtext {
-  animation: fadeSlideUp 1.2s ease forwards;
-  animation-delay: 0.5s;
-  opacity: 0;
-}
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-@keyframes fadeSlideDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-@keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-ead>
-    
-
-    <style>
-        body {<div class="hero">
-  <div class="hero-content">
-    <h1 class="animate-text">Hey! I’m Om Kumbhar</h1>
-    <p class="animate-subtext">
-      Finance & Compliance Professional | Junior Executive
-    </p>
-  </div>
-</div>
-
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(90deg, #0f4c81, #1e90ff);
-            color: Black;
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 44px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 18px;
-            opacity: 0.95;
-        }
-
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        section h2 {
-            color: #0f4c81;
-            border-left: 5px solid #1e90ff;
-            padding-left: 12px;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 14px;
-        }
-    </style>
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Om Kumbhar</h1>
-    <p>Finance & Compliance Executive | Junior Executive – CS Prashant Pange & Assosiates</p>
-</header>
+  <!-- HERO FIRST PAGE -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Hey! I’m Om Kumbhar</h1>
+      <p>Finance & Compliance Professional
+    </div>
+  </div>
+
+  <!-- REST OF CONTENT -->
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I am a finance and compliance professional with experience in corporate operations,
+      regulatory filings, and tax compliance.
+    </p>
+  </section>
+
+</body>
+</html>>
 
 <section>
-    <h2>About Me</h2>
+    <h1>About Me</h2>
     <p>
         I am a finance and compliance professional with experience in corporate operations,
         regulatory filings, and statutory compliance. I specialize in tax processes,
@@ -176,7 +132,7 @@ ead>
 </section>
 
 <section>
-    <h2>Contact<9172046662/h2>
+    <h2>Contact<9172046662
     <p>Email: omkumbhar511@gmail.com</p>
     <p>LinkedIn:www.linkedin.com/in/om-kumbhar511</p>
 </section>
