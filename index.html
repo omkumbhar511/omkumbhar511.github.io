@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Om Kumbhar | Finance & Compliance Professional</title>
 
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 /* RESET */
 * {
@@ -15,24 +18,67 @@
 
 /* BODY */
 body {
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  background: #f4f7fb;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
+  background: #0b1320;
+  color: #ffffff;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* SMOKY CURSOR */
 .cursor {
-  width: 18px;
-  height: 18px;
-  background: rgba(30,144,255,0.6);
   position: fixed;
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.7);
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(6px);
   transform: translate(-50%, -50%);
-  transition: 0.08s ease;
   z-index: 9999;
+}
+.trail {
+  position: fixed;
+  width: 22px;
+  height: 22px;
+  background: rgba(30,144,255,0.3);
+  border-radius: 50%;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+/* HIGHLIGHT STRIP */
+.highlight {
+  margin-top: 70px;
+  padding: 14px;
+  text-align: center;
+  background: linear-gradient(90deg, #1e90ff, #00c6ff);
+  color: #fff;
+  font-weight: 500;
+  animation: glow 3s infinite alternate;
+}
+@keyframes glow {
+  from { opacity: 0.85; }
+  to { opacity: 1; }
 }
 
 /* HERO */
@@ -45,20 +91,16 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
 }
-
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 .hero h1 {
   font-size: 56px;
   animation: fadeDown 1.2s ease forwards;
 }
-
 .hero p {
   font-size: 20px;
   margin-top: 10px;
@@ -66,84 +108,56 @@ body {
   animation: fadeUp 1.2s ease forwards;
   animation-delay: 0.4s;
 }
-
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* SECTIONS */
-section {
-  max-width: 1000px;
-  margin: 60px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 14px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+.section {
+  min-height: 100vh;
+  padding: 120px 15%;
+  background: #f4f7fb;
+  color: #333;
+  animation: sectionFade 1s ease;
 }
-
-section h2 {
+.section:nth-child(even) {
+  background: #ffffff;
+}
+@keyframes sectionFade {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section h2 {
   color: #0f4c81;
   margin-bottom: 15px;
-  border-left: 5px solid #1e90ff;
-  padding-left: 10px;
+  border-left: 6px solid #1e90ff;
+  padding-left: 12px;
 }
-
-section p, li {
+.section p, li {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
-
 ul {
   margin-top: 10px;
   padding-left: 20px;
 }
 
-/* CONTACT */
-.contact {
-  text-align: center;
-}
-
-.contact-card {
-  margin-top: 20px;
-  display: inline-block;
-  background: #ffffff;
-  padding: 25px 40px;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-}
-
-.contact-card p {
-  margin: 12px 0;
-}
-
-.contact-card a {
-  color: #1e90ff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-card a:hover {
-  text-decoration: underline;
-}
-
 /* FOOTER */
 footer {
-  margin-top: 60px;
-  padding: 30px 20px;
-  background: #0f2027;
-  color: white;
+  background: #050b16;
+  color: #ffffff;
+  padding: 40px;
   text-align: center;
-}
-
-footer p {
   font-size: 14px;
-  opacity: 0.9;
+}
+footer p {
+  margin: 6px 0;
+  opacity: 0.85;
 }
 </style>
 </head>
@@ -152,16 +166,32 @@ footer p {
 
 <div class="cursor"></div>
 
+<!-- NAV -->
+<nav>
+  <strong>Om Kumbhar</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#services">Services</a>
+  </div>
+</nav>
+
+<!-- HIGHLIGHT -->
+<div class="highlight">
+  Open to professional opportunities and consulting engagements
+</div>
+
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
   <div>
     <h1>Om Kumbhar</h1>
     <p>Finance & Compliance Professional</p>
   </div>
-</div>
+</section>
 
 <!-- ABOUT -->
-<section>
+<section id="about" class="section">
   <h2>About Me</h2>
   <p>
     I am a CS Executive and MBA (Finance – Pursuing) professional with experience in
@@ -171,19 +201,19 @@ footer p {
 </section>
 
 <!-- SKILLS -->
-<section>
+<section id="skills" class="section">
   <h2>Skills</h2>
   <ul>
     <li>Compliance & Tax Filing</li>
     <li>Financial Analysis</li>
-    <li>Business Registration (Company / LLP)</li>
+    <li>Company & LLP Registration</li>
     <li>GST & Income Tax Returns</li>
     <li>Regulatory & ROC Filings</li>
   </ul>
 </section>
 
 <!-- EXPERIENCE -->
-<section>
+<section id="experience" class="section">
   <h2>Experience</h2>
   <ul>
     <li><strong>Audit Intern – Sany Heavy Industry India Pvt. Ltd</strong> (3 Months)</li>
@@ -193,7 +223,7 @@ footer p {
 </section>
 
 <!-- SERVICES -->
-<section>
+<section id="services" class="section">
   <h2>Services</h2>
   <ul>
     <li>Income Tax Filing</li>
@@ -204,32 +234,31 @@ footer p {
   </ul>
 </section>
 
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Contact</h2>
-  <div class="contact-card">
-    <p><strong>Phone:</strong> <a href="tel:+919172046662">+91 91720 46662</a></p>
-    <p><strong>Email:</strong> <a href="mailto:omkumbhar511@gmail.com">omkumbhar511@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong>
-      <a href="https://www.linkedin.com/in/om-kumbhar511" target="_blank">
-        linkedin.com/in/om-kumbhar511
-      </a>
-    </p>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <p>Open to professional opportunities and consulting engagements</p>
+  <p>📞 +91 91720 46662 | ✉️ omkumbhar511@gmail.com</p>
+  <p>LinkedIn: linkedin.com/in/om-kumbhar511</p>
   <p>© 2025 Om Kumbhar. All rights reserved.</p>
 </footer>
 
+<!-- CURSOR SCRIPT -->
 <script>
 const cursor = document.querySelector(".cursor");
+
 document.addEventListener("mousemove", e => {
-  cursor.style.left = e.pageX + "px";
-  cursor.style.top = e.pageY + "px";
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+
+  const trail = document.createElement("div");
+  trail.className = "trail";
+  trail.style.left = e.clientX + "px";
+  trail.style.top = e.clientY + "px";
+  document.body.appendChild(trail);
+
+  setTimeout(() => trail.remove(), 250);
 });
 </script>
 
 </body>
 </html>
+
