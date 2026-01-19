@@ -5,83 +5,8 @@
   <title>Om Kumbhar | Financial Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">Om</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Om Kumbhar</h1>
-      <h2 class="typing"></h2>
-      <p>Finance Graduate | CS Executive | Aspiring Financial Analyst</p>
-      <div class="buttons">
-        <a href="#about" class="btn primary">View Profile</a>
-        <a href="#contact" class="btn glass">Contact Me</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <h2 class="section-title">Professional Summary</h2>
-    <p class="about-text">
-      Blending Finance Expertise with Corporate Law Insight. Passionate about
-      finance, market trends, and strategic decision-making.
-    </p>
-
-    <div class="about-cards">
-      <div class="about-card">Financial Statement Analysis</div>
-      <div class="about-card">Corporate Governance</div>
-      <div class="about-card">MCA & SEBI Compliance</div>
-      <div class="about-card">Excel Proficiency</div>
-      <div class="about-card">Investment Research</div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="experience" id="experience">
-    <h2 class="section-title">Experience</h2>
-
-    <div class="timeline">
-      <div class="timeline-item">Audit Intern – Sany Heavy Industries</div>
-      <div class="timeline-item">Junior Executive – Prashant Pange & Associates</div>
-      <div class="timeline-item">Junior Accountant – Sahara Packaging</div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="education" id="education">
-    <h2 class="section-title">Education</h2>
-
-    <div class="edu-cards">
-      <div class="edu-card">MBA – Finance (Pursuing)</div>
-      <div class="edu-card">CS Executive (Pursuing)</div>
-      <div class="edu-card">B.Com – Commerce</div>
-      <div class="edu-card">HSC</div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <h2 class="section-title">Let’s Connect</h2>
-    <p>Email: omkumbhar511@gmail.com</p>
-  </section>
-
-  <script src="script.js"></script>
-</body>
-</htm@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -90,10 +15,38 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: radial-gradient(circle at top, #0f172a, #020617);
   color: white;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* LOADER */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255,255,255,0.1);
+  border-top: 5px solid #38bdf8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
 
 /* NAVBAR */
@@ -104,8 +57,9 @@ body {
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background: rgba(2,6,23,0.6);
   backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.3);
   z-index: 1000;
 }
 
@@ -119,20 +73,23 @@ body {
   text-decoration: none;
   color: white;
   opacity: 0.7;
+  transition: 0.3s;
 }
 
 .navbar a:hover {
   opacity: 1;
+  color: #38bdf8;
 }
 
 /* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 2rem;
+  position: relative;
 }
 
 .hero h1 {
@@ -144,8 +101,12 @@ body {
   min-height: 40px;
 }
 
+.hero p {
+  opacity: 0.8;
+  margin: 1rem 0 2rem;
+}
+
 .buttons {
-  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -156,6 +117,7 @@ body {
   border-radius: 30px;
   text-decoration: none;
   color: white;
+  transition: 0.3s;
 }
 
 .primary {
@@ -165,11 +127,52 @@ body {
 .glass {
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.3);
+}
+
+/* FLOATING SHAPES */
+.floating-shapes span {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+}
+
+.floating-shapes span:nth-child(1) {
+  top: 20%;
+  left: 10%;
+}
+
+.floating-shapes span:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  width: 90px;
+  height: 90px;
+}
+
+.floating-shapes span:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  width: 40px;
+  height: 40px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
 
 /* SECTIONS */
-section {
-  padding: 6rem 2rem;
+.section {
+  padding: 7rem 2rem;
   text-align: center;
 }
 
@@ -181,76 +184,252 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
-/* ABOUT */
-.about-cards {
+.section-text {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  opacity: 0.8;
+  line-height: 1.8;
+}
+
+/* CARDS */
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: auto;
 }
 
-.about-card {
+.card {
   padding: 1.5rem;
+  border-radius: 20px;
   background: rgba(255,255,255,0.05);
-  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.4s;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
 }
 
-/* EXPERIENCE */
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.25);
+}
+
+/* TIMELINE */
 .timeline {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
 }
 
 .timeline-item {
-  margin: 1rem 0;
-  padding: 1rem;
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* EDUCATION */
-.edu-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 1rem;
-}
-
-.edu-card {
   padding: 1.5rem;
-  background: rgba(255,255,255,0.05);
+  margin: 1rem 0;
   border-radius: 15px;
+  background: rgba(255,255,255,0.05);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
 }
-// Typing effect
-const text = "Aspiring Financial Analyst";
-let index = 0;
+
+/* CONTACT */
+.contact p {
+  opacity: 0.8;
+  margin: 0.5rem 0;
+}
+</style>
+
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Om</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#whyme">Why Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Om Kumbhar</h1>
+      <h2 class="typing"></h2>
+      <p>Finance Graduate | CS Executive | Aspiring Financial Analyst</p>
+      <div class="buttons">
+        <a href="#about" class="btn primary">Explore</a>
+        <a href="#contact" class="btn glass">Contact</a>
+      </div>
+    </div>
+    <div class="floating-shapes">
+      <span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="section-title">Professional Summary</h2>
+    <p class="section-text">
+      Blending finance expertise with corporate law insight. Passionate about
+      financial analysis, compliance, and strategic growth.
+    </p>
+
+    <div class="cards">
+      <div class="card">Financial Analysis</div>
+      <div class="card">Corporate Governance</div>
+      <div class="card">MCA & SEBI Compliance</div>
+      <div class="card">Excel Proficiency</div>
+      <div class="card">Investment Research</div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">Audit Intern – Sany Heavy Industries</div>
+      <div class="timeline-item">Junior Executive – Prashant Pange & Associates</div>
+      <div class="timeline-item">Junior Accountant – Sahara Packaging</div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="cards">
+      <div class="card">MBA – Finance (Pursuing)</div>
+      <div class="card">CS Executive (Pursuing)</div>
+      <div class="card">B.Com</div>
+      <div class="card">HSC</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+    <div class="cards">
+      <div class="card">Financial Modeling</div>
+      <div class="card">Ratio Analysis</div>
+      <div class="card">Data Interpretation</div>
+      <div class="card">Compliance Handling</div>
+      <div class="card">Strategic Thinking</div>
+    </div>
+  </section>
+
+  <!-- GOALS -->
+  <section id="goals" class="section">
+    <h2 class="section-title">Career Objectives</h2>
+    <p class="section-text">
+      Seeking entry-level roles where I can apply analytical skills to drive business value
+      and grow in the financial sector.
+    </p>
+  </section>
+
+  <!-- WHY ME -->
+  <section id="whyme" class="section">
+    <h2 class="section-title">Why Choose Me?</h2>
+    <div class="cards">
+      <div class="card">Dual Expertise</div>
+      <div class="card">Hands-on Experience</div>
+      <div class="card">Results Driven</div>
+      <div class="card">Growth Mindset</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2 class="section-title">Let’s Connect</h2>
+    <p>Email: omkumbhar511@gmail.com</p>
+    <p>Location: Pune, India</p>
+  </section>
+
+ <script>
+   // Page Loader
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.style.display = "none";
+  }
+});
+
+// Typing Effect
+const typingText = "Aspiring Financial Analyst";
+let charIndex = 0;
+const typingElement = document.querySelector(".typing");
 
 function typeEffect() {
-  if (index < text.length) {
-    document.querySelector(".typing").innerHTML += text.charAt(index);
-    index++;
+  if (typingElement && charIndex < typingText.length) {
+    typingElement.innerHTML += typingText.charAt(charIndex);
+    charIndex++;
     setTimeout(typeEffect, 80);
   }
 }
 typeEffect();
 
-// Scroll animations
-const animatedItems = document.querySelectorAll(
-  ".about-card, .timeline-item, .edu-card"
+// Scroll Reveal Animations
+const animatedElements = document.querySelectorAll(
+  ".card, .timeline-item"
 );
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+animatedElements.forEach((el) => observer.observe(el));
+
+// Smooth Active Navbar Highlight
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (scrollY >= sectionTop - 200) {
+      current = section.getAttribute("id");
     }
   });
-}, { threshold: 0.2 });
 
-animatedItems.forEach(item => observer.observe(item));
-l>
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// Floating Parallax Effect
+document.addEventListener("mousemove", (e) => {
+  const shapes = document.querySelectorAll(".floating-shapes span");
+  shapes.forEach((shape, index) => {
+    const speed = (index + 1) * 0.02;
+    const x = (window.innerWidth / 2 - e.pageX) * speed;
+    const y = (window.innerHeight / 2 - e.pageY) * speed;
+    shape.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
+
+</script>
+
+</body>
+</html>
