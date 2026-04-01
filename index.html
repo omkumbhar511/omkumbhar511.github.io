@@ -1,471 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
- <title>Om Kumbhar | Financial Analyst</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Kumbhar | Financial Analyst</title>
 
-<meta name="description" content="Om Kumbhar – Financial Analyst, MBA aspirant from Pune, India. Personal portfolio showcasing finance projects, skills, experience, and career objectives.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-<meta name="keywords" content="Om Kumbhar, Om Kumbhar Financial Analyst, Om Kumbhar GitHub, Finance Portfolio Om Kumbhar, MBA Finance Pune">
-
-<meta name="author" content="Om Kumbhar">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: white;
-  overflow-x: hidden;
-}
-
-/* LOADER */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: #020617;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(255,255,255,0.1);
-  border-top: 5px solid #38bdf8;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  100% { transform: rotate(360deg); }
+body{
+  background:#0a0f1c;
+  color:#e2e8f0;
+  line-height:1.6;
 }
 
 /* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(2,6,23,0.6);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+nav{
+  position:fixed;
+  width:100%;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(10,15,28,0.8);
+  backdrop-filter:blur(12px);
+  z-index:1000;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+nav h2{
+  color:#38bdf8;
+  font-weight:600;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: white;
-  opacity: 0.7;
-  transition: 0.3s;
+nav ul{
+  display:flex;
+  gap:25px;
+  list-style:none;
 }
 
-.navbar a:hover {
-  opacity: 1;
-  color: #38bdf8;
+nav a{
+  text-decoration:none;
+  color:#cbd5f5;
+  font-size:14px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#38bdf8;
+}
+
+/* SECTION */
+section{
+  min-height:100vh;
+  padding:120px 8%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 /* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
+.hero{
+  max-width:700px;
 }
 
-.hero h1 {
-  font-size: 3rem;
+.hero h1{
+  font-size:52px;
+  font-weight:600;
 }
 
-.hero h2 {
-  color: #38bdf8;
-  min-height: 40px;
+.hero span{
+  color:#38bdf8;
 }
 
-.hero p {
-  opacity: 0.8;
-  margin: 1rem 0 2rem;
+.hero h3{
+  margin:12px 0;
+  font-weight:300;
+  color:#94a3b8;
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+.hero p{
+  margin-top:10px;
+  color:#cbd5f5;
 }
 
-.btn {
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
+/* BUTTON */
+.btn{
+  margin-top:25px;
+  padding:12px 28px;
+  background:#38bdf8;
+  color:black;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:500;
+  transition:0.3s;
 }
 
-.primary {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
+.btn:hover{
+  background:white;
 }
 
-.glass {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+  margin-top:30px;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(56,189,248,0.3);
+.card{
+  background:#111827;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
 }
 
-/* FLOATING SHAPES */
-.floating-shapes span {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 50%;
-  animation: float 8s infinite ease-in-out;
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#38bdf8;
 }
 
-.floating-shapes span:nth-child(1) {
-  top: 20%;
-  left: 10%;
+/* SKILLS */
+.skills span{
+  display:inline-block;
+  background:#1e293b;
+  padding:8px 14px;
+  margin:6px;
+  border-radius:8px;
+  font-size:14px;
 }
 
-.floating-shapes span:nth-child(2) {
-  top: 60%;
-  left: 80%;
-  width: 90px;
-  height: 90px;
+/* SECTION TITLE */
+h1{
+  font-size:32px;
+  margin-bottom:10px;
 }
 
-.floating-shapes span:nth-child(3) {
-  top: 80%;
-  left: 30%;
-  width: 40px;
-  height: 40px;
+/* FADE ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
-}
-
-/* SECTIONS */
-.section {
-  padding: 7rem 2rem;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.section-text {
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  opacity: 0.8;
-  line-height: 1.8;
-}
-
-/* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.card {
-  padding: 1.5rem;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: 0.4s;
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 30px rgba(56,189,248,0.25);
-}
-
-/* TIMELINE */
-.timeline {
-  max-width: 700px;
-  margin: auto;
-}
-
-.timeline-item {
-  padding: 1.5rem;
-  margin: 1rem 0;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.05);
-  opacity: 0;
-  transform: translateY(30px);
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* CONTACT */
-.contact p {
-  opacity: 0.8;
-  margin: 0.5rem 0;
-}
-    @media (max-width: 768px) {
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero h2 {
-    font-size: 1.2rem;
-  }
-
-  .navbar {
-    padding: 1rem;
-  }
-
-  .navbar ul {
-    display: none;
-  }
-
-  .section {
-    padding: 4rem 1.2rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:none;
+  background:#111827;
+  color:white;
 }
 
+footer{
+  text-align:center;
+  padding:20px;
+  background:#020617;
+  color:#94a3b8;
+}
 </style>
-  
-
 </head>
+
 <body>
-  
 
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="spinner"></div>
+<nav>
+  <h2>Om Kumbhar</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <div class="hero fade">
+    <h1>Hi, I'm <span>Om Kumbhar</span></h1>
+    <h3 id="typing"></h3>
+    <p>Finance professional with experience in financial reporting, audit support, and data-driven analysis. Focused on building insights through financial modeling.</p>
+    <button class="btn" onclick="window.open('Om_Kumbhar_CV.pdf')">Download Resume</button>
   </div>
+</section>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-   <div class="logo">Om Kumbhar</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#goals">Goals</a></li>
-      <li><a href="#whyme">Why Me</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- ABOUT -->
+<section id="about" class="fade">
+  <h1>About Me</h1>
+  <p>I am an MBA Finance student with practical exposure to financial reporting, audit processes, and compliance. I have worked on financial statements, data analysis, and business insights generation.</p>
+</section>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Om Kumbhar</h1>
-      <h2 class="typing"></h2>
-      <p>Finance Graduate | CS Executive | Aspiring Financial Analyst</p>
-      <div class="buttons">
-        <a href="#about" class="btn primary">Explore</a>
-        <a href="#contact" class="btn glass">Contact</a>
-      </div>
+<!-- EXPERIENCE -->
+<section id="experience" class="fade">
+  <h1>Experience</h1>
+  <div class="grid">
+    <div class="card">
+      <h3>Audit Intern</h3>
+      <p>SANY Heavy Industry</p>
+      <p>Financial verification, audit documentation, compliance checks.</p>
     </div>
-    <div class="floating-shapes">
-      <span></span><span></span><span></span>
+    <div class="card">
+      <h3>Junior Executive</h3>
+      <p>Prashant Pange & Associates</p>
+      <p>Financial reporting, compliance filing, reconciliation.</p>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2 class="section-title">Professional Summary</h2>
-    <p class="section-text">
-      Blending finance expertise with corporate law insight. Passionate about
-      financial analysis, compliance,Auditing and strategic growth.
-    </p>
-
-    <div class="cards">
-      <div class="card">Financial Analysis</div>
-      <div class="card">Corporate Governance</div>
-      <div class="card">MCA & SEBI Compliance</div>
-      <div class="card">Excel Proficiency</div>
-      <div class="card">Investment Research</div>
+    <div class="card">
+      <h3>Freelance Audit Associate</h3>
+      <p>Stock & Financial Audit</p>
+      <p>Inventory audit, valuation, financial verification.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section">
-    <h2 class="section-title">Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">Audit Intern – Sany Heavy Industries Pvt.Ltd (3 Months)</div>
-      <div class="timeline-item">Junior Executive – Prashant Pange & Associates (1.6 Years)</div>
-      <div class="timeline-item">Junior Accountant – Sahara Packaging(6 Months)</div>
-    </div>
-  </section>
+<!-- PROJECT -->
+<section id="projects" class="fade">
+  <h1>Projects</h1>
+  <div class="card">
+    <h3>Financial Analysis Dashboard</h3>
+    <p>Developed Excel-based financial model including forecasting, ratio analysis, and interactive dashboard for decision-making.</p>
+  </div>
+</section>
 
-  <!-- EDUCATION -->
-  <section id="education" class="section">
-    <h2 class="section-title">Education</h2>
-    <div class="cards">
-      <div class="card">MBA – Finance (Pursuing)</div>
-      <div class="card">CS Executive (Pursuing)</div>
-      <div class="card">B.Com (2024)</div>
-      <div class="card">HSC(2021)</div>
-    </div>
-  </section>
+<!-- SKILLS -->
+<section id="skills" class="fade">
+  <h1>Skills</h1>
+  <div class="skills">
+    <span>Financial Modeling</span>
+    <span>Excel</span>
+    <span>P&L Analysis</span>
+    <span>Cash Flow Analysis</span>
+    <span>Ratio Analysis</span>
+    <span>Tally</span>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <h2 class="section-title">Skills</h2>
-    <div class="cards">
-      <div class="card">Financial Modeling</div>
-      <div class="card">Analytical</div>
-      <div class="card">Data Interpretation</div>
-      <div class="card">Compliance Handling</div>
-      <div class="card">Account Management</div>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section id="contact" class="fade">
+  <h1>Contact</h1>
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea placeholder="Your Message"></textarea>
+  <button class="btn">Send</button>
+</section>
 
-  <!-- GOALS -->
-  <section id="goals" class="section">
-    <h2 class="section-title">Career Objectives</h2>
-    <p class="section-text">
-      Seeking entry-level roles where I can apply analytical skills to drive business value
-      and grow in the financial sector.
-    </p>
-  </section>
+<footer>
+  © 2026 Om Kumbhar | Financial Analyst Portfolio
+</footer>
 
-  <!-- WHY ME -->
-  <section id="whyme" class="section">
-    <h2 class="section-title">Why Choose Me?</h2>
-    <div class="cards">
-      <div class="card">Dual Expertise</div>
-      <div class="card">Hands-on Experience</div>
-      <div class="card">Results Driven</div>
-      <div class="card">Growth Mindset</div>
-    </div>
-  </section>
+<script>
+/* Typing Effect */
+const roles = ["MBA Finance Student", "Financial Analyst Aspirant", "Excel & Modeling Specialist"];
+let i=0, j=0, current="", deleting=false;
 
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
-    <h2 class="section-title">Let’s Connect</h2>
-    <p>Email: omkumbhar511@gmail.com</p>
-    <p>Contact:9172046662</p>
-    <p>Location: Pune, India</p>
-  </section>
+function type(){
+  if(i<roles.length){
+    if(!deleting && j<=roles[i].length){
+      current = roles[i].substring(0,j++);
+    }else if(deleting && j>=0){
+      current = roles[i].substring(0,j--);
+    }
 
- <script>
-   // Page Loader
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  if (loader) {
-    loader.style.display = "none";
-  }
-});
+    document.getElementById("typing").innerHTML = current;
 
-// Typing Effect
-const typingText = "Aspiring Financial Analyst";
-let charIndex = 0;
-const typingElement = document.querySelector(".typing");
+    if(j==roles[i].length) deleting=true;
+    if(j==0){ deleting=false; i++; }
 
-function typeEffect() {
-  if (typingElement && charIndex < typingText.length) {
-    typingElement.innerHTML += typingText.charAt(charIndex);
-    charIndex++;
-    setTimeout(typeEffect, 80);
+    setTimeout(type,90);
   }
 }
-typeEffect();
+type();
 
-// Scroll Reveal Animations
-const animatedElements = document.querySelectorAll(
-  ".card, .timeline-item"
-);
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-animatedElements.forEach((el) => observer.observe(el));
-
-// Smooth Active Navbar Highlight
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    if (scrollY >= sectionTop - 200) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
+/* Scroll Animation */
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
     }
   });
 });
 
-// Floating Parallax Effect
-document.addEventListener("mousemove", (e) => {
-  const shapes = document.querySelectorAll(".floating-shapes span");
-  shapes.forEach((shape, index) => {
-    const speed = (index + 1) * 0.02;
-    const x = (window.innerWidth / 2 - e.pageX) * speed;
-    const y = (window.innerHeight / 2 - e.pageY) * speed;
-    shape.style.transform = `translate(${x}px, ${y}px)`;
-  });
-});
-
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 </script>
 
 </body>
