@@ -16,34 +16,38 @@ body{
   background:black;
 }
 
-/* ANIMATED BACKGROUND */
+/* BACKGROUND */
 .bg{
   position:fixed;
   width:100%;
   height:100%;
-  z-index:-2;
+  z-index:-3;
   background:linear-gradient(-45deg,#020617,#0f172a,#1e293b,#020617);
   background-size:400% 400%;
-  animation:gradient 12s ease infinite;
+  animation:gradient 15s ease infinite;
 }
-
 @keyframes gradient{
   0%{background-position:0% 50%;}
   50%{background-position:100% 50%;}
   100%{background-position:0% 50%;}
 }
 
-/* FLOATING BLOBS */
-.blob{
+/* GLOW SHAPES */
+.shape{
   position:absolute;
   border-radius:50%;
   filter:blur(120px);
-  opacity:0.25;
+  opacity:0.3;
+  animation:float 12s infinite ease-in-out;
 }
-
-.b1{width:400px;height:400px;background:#38bdf8;top:10%;left:10%;}
-.b2{width:350px;height:350px;background:#8b5cf6;bottom:10%;right:10%;}
-.b3{width:300px;height:300px;background:#22c55e;top:50%;left:50%;}
+.s1{width:500px;height:500px;background:#38bdf8;top:5%;left:5%;}
+.s2{width:400px;height:400px;background:#8b5cf6;bottom:10%;right:5%;}
+.s3{width:300px;height:300px;background:#22c55e;top:50%;left:50%;}
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-80px);}
+  100%{transform:translateY(0);}
+}
 
 /* NAV */
 nav{
@@ -52,13 +56,12 @@ nav{
   padding:20px 8%;
   display:flex;
   justify-content:space-between;
-  backdrop-filter:blur(12px);
   background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(12px);
   z-index:1000;
 }
-
 nav h2{color:#38bdf8;}
-nav ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
+nav ul{display:flex;gap:20px;list-style:none;}
 nav a{color:white;text-decoration:none;font-size:14px;}
 
 /* SECTION */
@@ -72,20 +75,19 @@ section{
 /* CONTAINER */
 .container{
   width:100%;
-  max-width:1200px;
+  max-width:1300px;
   margin:auto;
   padding:60px;
-  background:rgba(255,255,255,0.05);
+  background:rgba(255,255,255,0.06);
   border-radius:20px;
-  backdrop-filter:blur(20px);
-  box-shadow:0 30px 80px rgba(0,0,0,0.6);
+  backdrop-filter:blur(25px);
 }
 
 /* HERO */
 .hero{text-align:center;}
 .hero h1{font-size:80px;}
 .hero h2{color:#38bdf8;margin:10px 0;}
-.hero p{max-width:700px;margin:auto;color:#cbd5e1;}
+.hero p{max-width:750px;margin:auto;color:#cbd5e1;}
 
 /* BUTTON */
 .btn{
@@ -106,55 +108,66 @@ section{
 
 /* CARD */
 .card{
-  padding:25px;
+  padding:30px;
   border-radius:15px;
   background:rgba(255,255,255,0.08);
+  transition:0.4s;
+}
+.card:hover{
+  transform:translateY(-15px);
+  box-shadow:0 0 40px #38bdf8;
+}
+
+/* CHART */
+.chart{
+  height:200px;
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+}
+.bar{
+  width:20px;
+  background:#38bdf8;
+  animation:grow 1s ease;
+}
+@keyframes grow{
+  from{height:0;}
 }
 
 /* TEXT */
-h1{margin-bottom:20px;font-size:38px;}
-li{margin:8px 0;}
+h1{margin-bottom:25px;font-size:40px;}
+li{margin:10px 0;}
 
 .fade{
   opacity:0;
-  transform:translateY(50px);
+  transform:translateY(60px);
   transition:1s;
 }
 .fade.show{
   opacity:1;
   transform:translateY(0);
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="bg"></div>
-<div class="blob b1"></div>
-<div class="blob b2"></div>
-<div class="blob b3"></div>
+<div class="shape s1"></div>
+<div class="shape s2"></div>
+<div class="shape s3"></div>
 
 <nav>
   <h2>Om Kumbhar</h2>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#summary">Summary</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Project</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#tools">Tools</a></li>
-    <li><a href="#languages">Languages</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
 </nav>
 
-<!-- HOME -->
-<section id="home">
+<!-- HERO -->
+<section>
   <div class="container hero fade">
     <h1>Om Kumbhar</h1>
     <h2>Finance & Financial Reporting Analyst</h2>
-    <p>Pune, Maharashtra, India | +91 9172046662 | omkumbhar511@gmail.com</p>
+    <p>Experienced in financial reporting, audit support, and financial data analysis.</p>
 
     <a href="Om Kumbhar CV.pdf" download>
       <button class="btn">Download Resume</button>
@@ -162,39 +175,28 @@ li{margin:8px 0;}
   </div>
 </section>
 
-<!-- SUMMARY -->
-<section id="summary">
-  <div class="container fade">
-    <h1>Professional Summary</h1>
-    <p>Commerce graduate with experience in financial reporting, accounting documentation, audit support, and compliance processes. Skilled in preparing financial records, supporting regulatory reporting, and analyzing financial data.</p>
-    <p>Strong understanding of Profit & Loss statements, Balance Sheets, accounting controls, and financial analysis. Currently pursuing MBA in Finance and seeking an opportunity as a Financial Analyst.</p>
-  </div>
-</section>
-
 <!-- EXPERIENCE -->
-<section id="experience">
+<section>
   <div class="container fade">
     <h1>Professional Experience</h1>
+
     <div class="grid">
 
       <div class="card">
-        <h3>Audit Intern | SANY Heavy Industry Pvt. Ltd.</h3>
+        <h3>Audit Intern – SANY</h3>
         <ul>
-          <li>Assisted audit team in reviewing financial records and accounting documentation</li>
-          <li>Supported verification of financial statements and accounting entries</li>
-          <li>Performed financial data analysis and audit documentation</li>
-          <li>Ensured compliance and accuracy of financial records</li>
+          <li>Reviewed financial records</li>
+          <li>Verified accounting entries</li>
+          <li>Supported audit documentation</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>Junior Executive | Prashant Pange & Associates</h3>
+        <h3>Junior Executive</h3>
         <ul>
-          <li>Assisted in financial reporting and accounting documentation</li>
-          <li>Supported preparation of P&L statements and balance sheet reports</li>
-          <li>Handled compliance documentation and return filing processes</li>
-          <li>Maintained financial records ensuring accuracy</li>
-          <li>Performed financial data reconciliation</li>
+          <li>Prepared P&L reports</li>
+          <li>Handled compliance</li>
+          <li>Performed reconciliation</li>
         </ul>
       </div>
 
@@ -202,72 +204,19 @@ li{margin:8px 0;}
   </div>
 </section>
 
-<!-- PROJECT -->
-<section id="projects">
+<!-- DASHBOARD -->
+<section>
   <div class="container fade">
-    <h1>Finance Project</h1>
-    <div class="card">
-      <ul>
-        <li>Developed Excel-based financial model</li>
-        <li>Prepared P&L, Balance Sheet, Cash Flow</li>
-        <li>Conducted ratio analysis</li>
-        <li>Built forecasting models</li>
-        <li>Designed dashboard</li>
-      </ul>
+    <h1>Financial Dashboard Preview</h1>
+
+    <div class="chart">
+      <div class="bar" style="height:80px"></div>
+      <div class="bar" style="height:120px"></div>
+      <div class="bar" style="height:150px"></div>
+      <div class="bar" style="height:100px"></div>
+      <div class="bar" style="height:180px"></div>
     </div>
-  </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container fade">
-    <h1>Core Competencies</h1>
-    <p>Financial Reporting • Financial Modeling • Forecasting • P&L Analysis • Balance Sheet • Cash Flow • Ratio Analysis • Excel</p>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="container fade">
-    <h1>Education</h1>
-    <ul>
-      <li>MBA (Finance) – Pune</li>
-      <li>B.Com – CGPA 7.53</li>
-      <li>HSC – 84.5%</li>
-    </ul>
-  </div>
-</section>
-
-<!-- TOOLS -->
-<section id="tools">
-  <div class="container fade">
-    <h1>Tools</h1>
-    <ul>
-      <li>Microsoft Excel</li>
-      <li>Tally</li>
-      <li>Financial Modeling</li>
-    </ul>
-  </div>
-</section>
-
-<!-- LANGUAGES -->
-<section id="languages">
-  <div class="container fade">
-    <h1>Languages</h1>
-    <ul>
-      <li>English</li>
-      <li>Hindi</li>
-      <li>Marathi</li>
-    </ul>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container fade">
-    <h1>Contact</h1>
-    <p>Email: omkumbhar511@gmail.com</p>
-    <p>Phone: +91 9172046662</p>
   </div>
 </section>
 
