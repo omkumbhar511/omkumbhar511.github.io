@@ -1,471 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
- <title>Om Kumbhar | Financial Analyst</title>
+<meta charset="UTF-8">
+<title>Om Kumbhar | Financial Analyst</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Om Kumbhar – Financial Analyst, MBA aspirant from Pune, India. Personal portfolio showcasing finance projects, skills, experience, and career objectives.">
-
-<meta name="keywords" content="Om Kumbhar, Om Kumbhar Financial Analyst, Om Kumbhar GitHub, Finance Portfolio Om Kumbhar, MBA Finance Pune">
-
-<meta name="author" content="Om Kumbhar">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: white;
-  overflow-x: hidden;
-}
-
-/* LOADER */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: #020617;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(255,255,255,0.1);
-  border-top: 5px solid #38bdf8;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:linear-gradient(135deg,#020617,#0f172a);color:#fff;}
+html{scroll-behavior:smooth}
 
 /* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(2,6,23,0.6);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+.navbar{
+position:fixed;top:0;width:100%;
+padding:1rem 2rem;
+display:flex;justify-content:space-between;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white;
-  opacity: 0.7;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  opacity: 1;
-  color: #38bdf8;
-}
+.navbar a{color:white;text-decoration:none;margin:0 10px}
+.navbar a:hover{color:#38bdf8}
 
 /* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:2rem;
+}
+.hero-container{
+display:flex;
+max-width:1100px;
+gap:3rem;
+align-items:center;
+}
+.hero-left h1{font-size:3rem}
+.hero-left span{color:#38bdf8}
+.hero-left p{opacity:0.8;margin:1rem 0}
+
+.hero-right img{
+width:280px;border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.5);
 }
 
-.hero h1 {
-  font-size: 3rem;
+/* BUTTON */
+.btn{
+padding:12px 25px;border-radius:30px;
+text-decoration:none;margin-right:10px;
 }
+.primary{background:linear-gradient(135deg,#38bdf8,#6366f1)}
+.glass{background:rgba(255,255,255,0.1)}
 
-.hero h2 {
-  color: #38bdf8;
-  min-height: 40px;
-}
-
-.hero p {
-  opacity: 0.8;
-  margin: 1rem 0 2rem;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn {
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.primary {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
-}
-
-.glass {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(56,189,248,0.3);
-}
-
-/* FLOATING SHAPES */
-.floating-shapes span {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 50%;
-  animation: float 8s infinite ease-in-out;
-}
-
-.floating-shapes span:nth-child(1) {
-  top: 20%;
-  left: 10%;
-}
-
-.floating-shapes span:nth-child(2) {
-  top: 60%;
-  left: 80%;
-  width: 90px;
-  height: 90px;
-}
-
-.floating-shapes span:nth-child(3) {
-  top: 80%;
-  left: 30%;
-  width: 40px;
-  height: 40px;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
-}
-
-/* SECTIONS */
-.section {
-  padding: 7rem 2rem;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.section-text {
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  opacity: 0.8;
-  line-height: 1.8;
+/* SECTION */
+.section{padding:6rem 2rem}
+.section-title{
+text-align:center;
+font-size:2rem;
+margin-bottom:2rem;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 /* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  max-width: 900px;
-  margin: auto;
+.card{
+background:rgba(255,255,255,0.05);
+padding:1.5rem;
+margin:1rem auto;
+max-width:900px;
+border-radius:15px;
 }
 
-.card {
-  padding: 1.5rem;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: 0.4s;
-  opacity: 0;
-  transform: translateY(30px);
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:1.5rem;
+max-width:1000px;
+margin:auto;
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 30px rgba(56,189,248,0.25);
+/* STATS */
+.stats{
+background:#ef4444;
+padding:3rem;
+text-align:center;
+}
+.stats-grid{
+display:flex;justify-content:space-around;
 }
 
-/* TIMELINE */
-.timeline {
-  max-width: 700px;
-  margin: auto;
+/* MOBILE */
+@media(max-width:768px){
+.hero-container{flex-direction:column;text-align:center}
 }
-
-.timeline-item {
-  padding: 1.5rem;
-  margin: 1rem 0;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.05);
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-/* CONTACT */
-.contact p {
-  opacity: 0.8;
-  margin: 0.5rem 0;
-}
-    @media (max-width: 768px) {
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero h2 {
-    font-size: 1.2rem;
-  }
-
-  .navbar {
-    padding: 1rem;
-  }
-
-  .navbar ul {
-    display: none;
-  }
-
-  .section {
-    padding: 4rem 1.2rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-}
-
 </style>
-  
-
 </head>
+
 <body>
-  
 
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+<div><b>Om Kumbhar</b></div>
+<div>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-   <div class="logo">Om Kumbhar</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#goals">Goals</a></li>
-      <li><a href="#whyme">Why Me</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-container">
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Om Kumbhar</h1>
-      <h2 class="typing"></h2>
-      <p>Finance Graduate | CS Executive | Aspiring Financial Analyst</p>
-      <div class="buttons">
-        <a href="#about" class="btn primary">Explore</a>
-        <a href="#contact" class="btn glass">Contact</a>
-      </div>
-    </div>
-    <div class="floating-shapes">
-      <span></span><span></span><span></span>
-    </div>
-  </section>
+<div class="hero-left">
+<h1>Hello, I'm <span>Om Kumbhar</span></h1>
+<h2 class="typing"></h2>
+<p>Finance & Financial Reporting Analyst</p>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2 class="section-title">Professional Summary</h2>
-    <p class="section-text">
-      Blending finance expertise with corporate law insight. Passionate about
-      financial analysis, compliance,Auditing and strategic growth.
-    </p>
+<a href="#about" class="btn primary">Explore</a>
+<a href="#contact" class="btn glass">Contact</a>
+</div>
 
-    <div class="cards">
-      <div class="card">Financial Analysis</div>
-      <div class="card">Corporate Governance</div>
-      <div class="card">MCA & SEBI Compliance</div>
-      <div class="card">Excel Proficiency</div>
-      <div class="card">Investment Research</div>
-    </div>
-  </section>
+<div class="hero-right">
+<img src="https://i.imgur.com/8Km9tLL.png">
+</div>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section">
-    <h2 class="section-title">Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">Audit Intern – Sany Heavy Industries Pvt.Ltd (3 Months)</div>
-      <div class="timeline-item">Junior Executive – Prashant Pange & Associates (1.6 Years)</div>
-      <div class="timeline-item">Junior Accountant – Sahara Packaging(6 Months)</div>
-    </div>
-  </section>
+</div>
+</section>
 
-  <!-- EDUCATION -->
-  <section id="education" class="section">
-    <h2 class="section-title">Education</h2>
-    <div class="cards">
-      <div class="card">MBA – Finance (Pursuing)</div>
-      <div class="card">CS Executive (Pursuing)</div>
-      <div class="card">B.Com (2024)</div>
-      <div class="card">HSC(2021)</div>
-    </div>
-  </section>
+<!-- ABOUT -->
+<section id="about" class="section">
+<h2 class="section-title">Professional Summary</h2>
+<div class="card">
+Commerce graduate with experience in financial reporting, audit support, and compliance.
+Strong knowledge of P&L, Balance Sheet, Cash Flow, and financial analysis. Currently pursuing MBA in Finance.
+</div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <h2 class="section-title">Skills</h2>
-    <div class="cards">
-      <div class="card">Financial Modeling</div>
-      <div class="card">Analytical</div>
-      <div class="card">Data Interpretation</div>
-      <div class="card">Compliance Handling</div>
-      <div class="card">Account Management</div>
-    </div>
-  </section>
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+<h2 class="section-title">Experience</h2>
 
-  <!-- GOALS -->
-  <section id="goals" class="section">
-    <h2 class="section-title">Career Objectives</h2>
-    <p class="section-text">
-      Seeking entry-level roles where I can apply analytical skills to drive business value
-      and grow in the financial sector.
-    </p>
-  </section>
+<div class="card">
+<b>Audit Intern – SANY Heavy Industry Pvt. Ltd.</b><br>
+Jul 2025 – Sep 2025<br>
+• Financial audit support and documentation  
+</div>
 
-  <!-- WHY ME -->
-  <section id="whyme" class="section">
-    <h2 class="section-title">Why Choose Me?</h2>
-    <div class="cards">
-      <div class="card">Dual Expertise</div>
-      <div class="card">Hands-on Experience</div>
-      <div class="card">Results Driven</div>
-      <div class="card">Growth Mindset</div>
-    </div>
-  </section>
+<div class="card">
+<b>Junior Executive – Prashant Pange & Associates</b><br>
+Jan 2024 – Jun 2025<br>
+• Financial reporting, compliance, P&L preparation  
+</div>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
-    <h2 class="section-title">Let’s Connect</h2>
-    <p>Email: omkumbhar511@gmail.com</p>
-    <p>Contact:9172046662</p>
-    <p>Location: Pune, India</p>
-  </section>
+<div class="card">
+<b>Freelance Audit Associate</b><br>
+2023 – Present  
+</div>
 
- <script>
-   // Page Loader
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  if (loader) {
-    loader.style.display = "none";
-  }
-});
+<div class="card">
+<b>Junior Accountant – Sahara Packaging</b><br>
+Mar 2022 – Aug 2022  
+</div>
 
-// Typing Effect
-const typingText = "Aspiring Financial Analyst";
-let charIndex = 0;
-const typingElement = document.querySelector(".typing");
+</section>
 
-function typeEffect() {
-  if (typingElement && charIndex < typingText.length) {
-    typingElement.innerHTML += typingText.charAt(charIndex);
-    charIndex++;
-    setTimeout(typeEffect, 80);
-  }
-}
-typeEffect();
+<!-- SKILLS -->
+<section id="skills" class="section">
+<h2 class="section-title">Skills</h2>
 
-// Scroll Reveal Animations
-const animatedElements = document.querySelectorAll(
-  ".card, .timeline-item"
-);
+<div class="grid">
+<div class="card">Financial Reporting</div>
+<div class="card">Financial Modeling</div>
+<div class="card">P&L Analysis</div>
+<div class="card">Ratio Analysis</div>
+<div class="card">Excel</div>
+<div class="card">Tally</div>
+</div>
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
+</section>
 
-animatedElements.forEach((el) => observer.observe(el));
+<!-- STATS -->
+<section class="stats">
+<div class="stats-grid">
+<div><h2>2+</h2><p>Years Exp</p></div>
+<div><h2>10+</h2><p>Projects</p></div>
+<div><h2>100%</h2><p>Accuracy</p></div>
+</div>
+</section>
 
-// Smooth Active Navbar Highlight
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar a");
+<!-- CONTACT -->
+<section id="contact" class="section">
+<h2 class="section-title">Contact</h2>
+<p>Email: omkumbhar511@gmail.com</p>
+<p>Phone: +91 9172046662</p>
+<p>Location: Pune, India</p>
+</section>
 
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    if (scrollY >= sectionTop - 200) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
-
-// Floating Parallax Effect
-document.addEventListener("mousemove", (e) => {
-  const shapes = document.querySelectorAll(".floating-shapes span");
-  shapes.forEach((shape, index) => {
-    const speed = (index + 1) * 0.02;
-    const x = (window.innerWidth / 2 - e.pageX) * speed;
-    const y = (window.innerHeight / 2 - e.pageY) * speed;
-    shape.style.transform = `translate(${x}px, ${y}px)`;
-  });
-});
-
+<script>
+// typing
+const text="Aspiring Financial Analyst";
+let i=0;
+function type(){
+if(i<text.length){
+document.querySelector(".typing").innerHTML+=text[i];
+i++;setTimeout(type,70);
+}}
+type();
 </script>
 
 </body>
