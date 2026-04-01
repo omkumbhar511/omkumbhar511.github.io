@@ -3,28 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Kumbhar | Portfolio</title>
+<title>Om Kumbhar | Financial Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 
 body{
-  background:#070b14;
+  background:#0b1220;
   color:white;
-  overflow-x:hidden;
-}
-
-/* CURSOR GLOW */
-.cursor{
-  position:fixed;
-  width:300px;
-  height:300px;
-  background:radial-gradient(circle,rgba(0,224,255,0.3),transparent);
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  z-index:-1;
 }
 
 /* NAV */
@@ -34,9 +22,8 @@ nav{
   padding:20px 8%;
   display:flex;
   justify-content:space-between;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(12px);
-  z-index:1000;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
 }
 
 nav ul{display:flex;gap:25px;list-style:none;}
@@ -46,24 +33,20 @@ nav a{color:white;text-decoration:none;}
 section{
   min-height:100vh;
   padding:120px 8%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
 }
 
 /* HERO */
 .hero{
-  max-width:600px;
+  max-width:700px;
 }
 
 .hero h1{
-  font-size:65px;
-  line-height:1.1;
+  font-size:60px;
 }
 
 .hero h2{
-  margin:15px 0;
-  color:#00e0ff;
+  margin:10px 0;
+  color:#38bdf8;
 }
 
 .hero p{
@@ -71,49 +54,46 @@ section{
   line-height:1.7;
 }
 
-/* BUTTON */
 .btn{
-  margin-top:25px;
-  padding:14px 30px;
-  background:#00e0ff;
+  margin-top:20px;
+  padding:12px 25px;
+  background:#38bdf8;
   border:none;
   border-radius:8px;
   cursor:pointer;
-}
-
-/* GLASS CARD */
-.card{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(12px);
-  padding:25px;
-  border-radius:15px;
-  transition:0.4s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 30px #00e0ff;
 }
 
 /* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-  width:100%;
+  gap:20px;
 }
 
-/* SECTION THEMES */
-#home{background:linear-gradient(135deg,#020617,#0f172a);}
-#about{background:linear-gradient(135deg,#0f172a,#1e293b);}
-#experience{background:linear-gradient(135deg,#020617,#1e293b);}
-#projects{background:linear-gradient(135deg,#1e293b,#020617);}
-#skills{background:linear-gradient(135deg,#020617,#0f172a);}
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* SKILLS */
+.skills span{
+  display:inline-block;
+  margin:8px;
+  padding:10px 18px;
+  background:#1e293b;
+  border-radius:6px;
+}
 
 /* ANIMATION */
 .fade{
   opacity:0;
-  transform:translateY(50px);
+  transform:translateY(40px);
   transition:1s;
 }
 
@@ -122,29 +102,24 @@ section{
   transform:translateY(0);
 }
 
-/* FLOATING SHAPES */
+/* BACKGROUND SHAPES */
 .shape{
-  position:absolute;
+  position:fixed;
   border-radius:50%;
-  filter:blur(100px);
-  opacity:0.3;
+  filter:blur(80px);
+  z-index:-1;
 }
 
-.s1{width:300px;height:300px;background:#00e0ff;top:10%;left:10%;}
+.s1{width:300px;height:300px;background:#38bdf8;top:10%;left:10%;}
 .s2{width:250px;height:250px;background:#8b5cf6;bottom:10%;right:10%;}
-.s3{width:200px;height:200px;background:#22c55e;top:50%;left:50%;}
 
 </style>
 </head>
 
 <body>
 
-<div class="cursor"></div>
-
-<!-- SHAPES -->
 <div class="shape s1"></div>
 <div class="shape s2"></div>
-<div class="shape s3"></div>
 
 <nav>
   <h2>Om Kumbhar</h2>
@@ -162,53 +137,85 @@ section{
   <div class="hero fade">
     <h1>Om Kumbhar</h1>
     <h2>Finance & Financial Reporting Analyst</h2>
-    <p>Experienced in financial reporting, audit support, and compliance processes. Skilled in analyzing financial data and building structured financial insights.</p>
-    <button class="btn" onclick="window.open('Om_Kumbhar_CV.pdf')">Download Resume</button>
+    <p>Commerce graduate with experience in financial reporting, accounting documentation, audit support, and compliance processes. Skilled in preparing financial records, supporting regulatory reporting, and analyzing financial data.</p>
+
+    <!-- FIXED BUTTON -->
+    <a href="Om Kumbhar CV.pdf" download>
+      <button class="btn">Download Resume</button>
+    </a>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="hero fade">
-    <h1>About</h1>
-    <p>MBA Finance student with hands-on experience in audit, financial reporting, and compliance documentation. Strong understanding of financial statements and business analysis.</p>
+  <div class="fade">
+    <h1>Professional Summary</h1>
+    <p>Strong understanding of Profit & Loss statements, Balance Sheets, accounting controls, and financial analysis. Currently pursuing MBA in Finance and seeking an opportunity as a Financial Analyst.</p>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="grid fade">
-    <div class="card">Audit Intern – SANY Heavy Industry</div>
-    <div class="card">Junior Executive – Prashant Pange & Associates</div>
-    <div class="card">Freelance Audit Associate – Stock Audit</div>
+  <div class="fade">
+    <h1>Professional Experience</h1>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Audit Intern | SANY Heavy Industry Pvt. Ltd.</h3>
+        <p>Assisted audit team in reviewing financial records and accounting documentation. Supported verification of financial statements and accounting entries. Performed financial data analysis and ensured compliance.</p>
+      </div>
+
+      <div class="card">
+        <h3>Junior Executive | Prashant Pange & Associates</h3>
+        <p>Assisted in financial reporting, prepared P&L and balance sheet reports, handled compliance documentation and return filing, and maintained financial records.</p>
+      </div>
+
+      <div class="card">
+        <h3>Freelance Audit Associate</h3>
+        <p>Worked on stock audits, verified inventory records, valuation, and financial audit documentation across multiple assignments.</p>
+      </div>
+
+      <div class="card">
+        <h3>Junior Accountant | Sahara Packaging</h3>
+        <p>Maintained accounting records, supported financial reporting, and handled accounts payable and receivable processes.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- PROJECT -->
 <section id="projects">
-  <div class="hero fade">
-    <h1>Projects</h1>
-    <p>Financial Analysis Dashboard built in Excel including forecasting, ratio analysis, and financial insights.</p>
+  <div class="fade">
+    <h1>Finance Project</h1>
+    <div class="card">
+      <h3>Financial Analysis & Dashboard Project</h3>
+      <p>Developed Excel-based financial model, prepared financial statements, conducted ratio analysis, and created an interactive dashboard for financial insights.</p>
+    </div>
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="hero fade">
-    <h1>Skills</h1>
-    <p>Financial Reporting • Financial Modeling • Excel • Ratio Analysis • Cash Flow</p>
+  <div class="fade">
+    <h1>Core Competencies</h1>
+    <div class="skills">
+      <span>Financial Reporting</span>
+      <span>Financial Modeling</span>
+      <span>Financial Forecasting</span>
+      <span>P&L Analysis</span>
+      <span>Balance Sheet Analysis</span>
+      <span>Cash Flow Analysis</span>
+      <span>Ratio Analysis</span>
+      <span>Accounting Controls</span>
+      <span>Microsoft Excel</span>
+      <span>Tally</span>
+    </div>
   </div>
 </section>
 
 <script>
-
-/* Cursor Glow */
-document.addEventListener("mousemove", e=>{
-  document.querySelector(".cursor").style.left=e.clientX+"px";
-  document.querySelector(".cursor").style.top=e.clientY+"px";
-});
-
-/* Scroll Animation */
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -218,7 +225,6 @@ const observer=new IntersectionObserver(entries=>{
 });
 
 document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
-
 </script>
 
 </body>
