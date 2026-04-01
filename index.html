@@ -3,77 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Kumbhar | Portfolio</title>
+<title>Om Kumbhar | Financial Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Outfit',sans-serif;
+  font-family:'Inter',sans-serif;
 }
 
 body{
-  background:#0a0f1c;
-  color:white;
-  overflow-x:hidden;
-}
-
-/* BACKGROUND ANIMATION */
-.bg{
-  position:fixed;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  z-index:-1;
-}
-
-.circle{
-  position:absolute;
-  border-radius:50%;
-  background:linear-gradient(45deg,#00d4ff,#8b5cf6);
-  animation:float 10s infinite ease-in-out;
-  opacity:0.2;
-}
-
-.circle:nth-child(1){width:300px;height:300px;top:10%;left:10%;}
-.circle:nth-child(2){width:200px;height:200px;top:60%;left:70%;}
-.circle:nth-child(3){width:250px;height:250px;top:30%;left:50%;}
-
-@keyframes float{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-40px);}
-  100%{transform:translateY(0);}
+  color:#111;
+  scroll-behavior:smooth;
 }
 
 /* NAVBAR */
 nav{
   position:fixed;
   width:100%;
+  padding:20px 8%;
   display:flex;
   justify-content:space-between;
-  padding:20px 8%;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(12px);
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
   z-index:1000;
 }
 
-nav h2{color:#00d4ff;}
+nav h2{color:#2563eb;}
+nav ul{display:flex; gap:25px; list-style:none;}
+nav a{text-decoration:none; color:#333; font-weight:500;}
 
-nav ul{
-  display:flex;
-  gap:25px;
-  list-style:none;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-}
-
-/* SECTION */
+/* SECTIONS */
 section{
   min-height:100vh;
   padding:120px 8%;
@@ -82,88 +45,132 @@ section{
   justify-content:center;
 }
 
-/* GLASS CARD */
-.glass{
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(12px);
-  padding:40px;
-  border-radius:20px;
-  width:90%;
-  max-width:900px;
-  text-align:center;
-  transition:0.4s;
-}
-
-.glass:hover{
-  transform:translateY(-10px);
-}
-
 /* HERO */
-h1{
-  font-size:55px;
+#home{
+  background:linear-gradient(120deg,#eef2ff,#ffffff);
 }
 
-span{
-  color:#00d4ff;
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
 }
 
-#typing{
-  margin:15px 0;
-  font-size:22px;
+.hero-text{
+  max-width:600px;
 }
 
-/* BUTTON */
+.hero-text h1{
+  font-size:52px;
+  margin-bottom:10px;
+}
+
+.hero-text h2{
+  font-weight:400;
+  color:#2563eb;
+  margin-bottom:15px;
+}
+
+.hero-text p{
+  color:#555;
+  line-height:1.7;
+}
+
 .btn{
-  margin-top:20px;
-  padding:14px 30px;
-  background:#00d4ff;
+  margin-top:25px;
+  padding:12px 28px;
   border:none;
-  border-radius:8px;
+  background:#2563eb;
+  color:white;
+  border-radius:6px;
   cursor:pointer;
 }
 
-/* GRID */
+/* ABOUT */
+#about{
+  background:#f8fafc;
+}
+
+.about-box{
+  max-width:800px;
+  text-align:center;
+}
+
+.about-box p{
+  margin-top:15px;
+  color:#444;
+  line-height:1.8;
+}
+
+/* EXPERIENCE */
+#experience{
+  background:white;
+}
+
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  margin-top:20px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  margin-top:30px;
 }
 
 .card{
-  padding:20px;
-  border-radius:15px;
-  background:rgba(255,255,255,0.1);
+  padding:25px;
+  border-radius:10px;
+  border:1px solid #eee;
   transition:0.3s;
 }
 
 .card:hover{
-  transform:scale(1.05);
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transform:translateY(-5px);
+}
+
+/* PROJECT */
+#projects{
+  background:linear-gradient(120deg,#eef2ff,#f0fdf4);
+}
+
+.project-box{
+  max-width:800px;
+  background:white;
+  padding:40px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 /* SKILLS */
+#skills{
+  background:#f1f5f9;
+}
+
 .skills span{
   display:inline-block;
   margin:8px;
   padding:10px 18px;
-  background:#00d4ff;
-  color:black;
+  background:white;
+  border:1px solid #ddd;
   border-radius:8px;
 }
 
-/* INPUT */
+/* CONTACT */
+#contact{
+  background:white;
+}
+
 input,textarea{
   width:100%;
   padding:12px;
   margin:10px 0;
-  border:none;
+  border:1px solid #ddd;
   border-radius:6px;
 }
 
-/* FADE */
+/* ANIMATION */
 .fade{
   opacity:0;
-  transform:translateY(40px);
+  transform:translateY(30px);
   transition:1s;
 }
 
@@ -172,17 +179,28 @@ input,textarea{
   transform:translateY(0);
 }
 
+/* HEADLINE ANIMATION */
+.slide-text{
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+  border-right:2px solid #2563eb;
+  animation:typing 4s steps(40,end), blink .7s infinite;
+}
+
+@keyframes typing{
+  from{width:0;}
+  to{width:100%;}
+}
+
+@keyframes blink{
+  50%{border-color:transparent;}
+}
+
 </style>
 </head>
 
 <body>
-
-<!-- BACKGROUND -->
-<div class="bg">
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-</div>
 
 <nav>
   <h2>Om Kumbhar</h2>
@@ -198,51 +216,69 @@ input,textarea{
 
 <!-- HOME -->
 <section id="home">
-  <div class="glass fade">
-    <h1>Hi, I'm <span>Om Kumbhar</span></h1>
-    <div id="typing"></div>
-    <p>Finance professional specializing in financial reporting, audit, and analytical modeling.</p>
-    <button class="btn" onclick="window.open('Om_Kumbhar_CV.pdf')">Download Resume</button>
+  <div class="hero fade">
+    <div class="hero-text">
+      <h1>Om Kumbhar</h1>
+      <h2 class="slide-text">Finance Professional | MBA Student</h2>
+      <p>I specialize in financial reporting, audit support, and analytical decision-making. My work focuses on building structured financial insights that support business growth and compliance.</p>
+      <button class="btn" onclick="window.open('Om_Kumbhar_CV.pdf')">Download Resume</button>
+    </div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="glass fade">
+  <div class="about-box fade">
     <h1>About Me</h1>
-    <p>MBA Finance student with practical experience in audit, compliance, and financial reporting. Passionate about financial modeling and data-driven decision-making.</p>
+    <p>I am currently pursuing an MBA in Finance with hands-on experience in financial reporting, audit processes, and compliance management. I have worked across multiple roles supporting financial documentation, reconciliation, and analysis.</p>
+    <p>My approach is structured, detail-oriented, and focused on delivering accurate financial insights for business decision-making.</p>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="glass fade">
-    <h1>Experience</h1>
+  <div class="fade">
+    <h1>Professional Experience</h1>
     <div class="grid">
-      <div class="card">Audit Intern - SANY</div>
-      <div class="card">Junior Executive - Pange & Associates</div>
-      <div class="card">Freelance Audit Associate</div>
+      <div class="card">
+        <h3>Audit Intern</h3>
+        <p>SANY Heavy Industry</p>
+        <p>Worked on financial verification, audit documentation, and compliance validation.</p>
+      </div>
+      <div class="card">
+        <h3>Junior Executive</h3>
+        <p>Prashant Pange & Associates</p>
+        <p>Handled financial reporting, reconciliation, and compliance processes.</p>
+      </div>
+      <div class="card">
+        <h3>Freelance Audit Associate</h3>
+        <p>Independent Assignments</p>
+        <p>Conducted stock audits, valuation checks, and financial verification.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PROJECT -->
 <section id="projects">
-  <div class="glass fade">
-    <h1>Projects</h1>
-    <p>Excel-based Financial Dashboard with forecasting, ratio analysis, and insights.</p>
+  <div class="project-box fade">
+    <h1>Key Project</h1>
+    <h3>Financial Analysis Dashboard</h3>
+    <p>This project involved building a structured financial model using Excel. It included preparation of financial statements, ratio analysis, and forecasting models.</p>
+    <p>The final output was an interactive dashboard that provided insights into financial performance and trends.</p>
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="glass fade">
-    <h1>Skills</h1>
+  <div class="fade">
+    <h1>Core Skills</h1>
     <div class="skills">
+      <span>Financial Reporting</span>
       <span>Financial Modeling</span>
-      <span>Excel</span>
+      <span>Excel Analysis</span>
       <span>P&L Analysis</span>
-      <span>Cash Flow</span>
+      <span>Cash Flow Analysis</span>
       <span>Ratio Analysis</span>
     </div>
   </div>
@@ -250,40 +286,16 @@ input,textarea{
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="glass fade">
+  <div class="fade">
     <h1>Contact</h1>
-    <input placeholder="Name">
-    <input placeholder="Email">
-    <textarea placeholder="Message"></textarea>
+    <input placeholder="Your Name">
+    <input placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
     <button class="btn">Send</button>
   </div>
 </section>
 
 <script>
-
-/* Typing */
-const text=["MBA Finance Student","Financial Analyst","Excel Specialist"];
-let i=0,j=0,current="",del=false;
-
-function type(){
-  if(i<text.length){
-    if(!del && j<=text[i].length){
-      current=text[i].substring(0,j++);
-    }else if(del && j>=0){
-      current=text[i].substring(0,j--);
-    }
-
-    document.getElementById("typing").innerHTML=current;
-
-    if(j==text[i].length) del=true;
-    if(j==0){del=false;i++;}
-
-    setTimeout(type,80);
-  }
-}
-type();
-
-/* Scroll Animation */
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -291,9 +303,7 @@ const observer=new IntersectionObserver(entries=>{
     }
   });
 });
-
 document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
-
 </script>
 
 </body>
