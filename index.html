@@ -354,18 +354,13 @@ p{line-height:1.7;}
   </div>
 </section>
 <script>
-const text = document.querySelector(".split-text");
-const content = text.innerText;
-
-text.innerHTML = "";
-
-content.split("").forEach((letter, i) => {
-  const span = document.createElement("span");
-
-  // preserve spaces
-  span.innerHTML = letter === " " ? "&nbsp;" : letter;
-
-  span.style.animationDelay = i * 0.03 + "s";
-  text.appendChild(span);
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("show");
+    }
+  });
+});
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 });
 </script>
