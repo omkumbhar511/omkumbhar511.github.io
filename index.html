@@ -9,6 +9,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif;}
+html{scroll-behavior:smooth;}
 
 body{
   background:#020617;
@@ -36,12 +37,19 @@ body{
 .shape{
   position:absolute;
   border-radius:50%;
-  filter:blur(120px);
-  opacity:0.4;
+  filter:blur(140px);
+  opacity:0.35;
+  animation:float 10s infinite ease-in-out;
 }
 .s1{width:500px;height:500px;background:#38bdf8;top:5%;left:5%;}
 .s2{width:400px;height:400px;background:#8b5cf6;bottom:10%;right:5%;}
 .s3{width:350px;height:350px;background:#22c55e;top:60%;left:40%;}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-70px);}
+  100%{transform:translateY(0);}
+}
 
 /* NAV */
 nav{
@@ -55,8 +63,11 @@ nav{
   z-index:1000;
 }
 nav h2{color:#38bdf8;}
+nav ul{display:flex;gap:20px;list-style:none;}
+nav a{color:white;text-decoration:none;font-size:14px;}
+nav a:hover{color:#38bdf8;}
 
-/* SECTION */
+/* SECTIONS */
 section{
   padding:120px 8%;
 }
@@ -70,26 +81,69 @@ section{
 .hero{
   text-align:center;
 }
-.hero h1{font-size:70px;}
-.hero h2{color:#38bdf8;margin:10px 0;}
+.hero h1{
+  font-size:72px;
+  font-weight:700;
+}
+.hero h2{
+  color:#38bdf8;
+  margin:10px 0;
+}
+.hero p{
+  font-size:16px;
+}
 
-/* CARD */
-.card{
-  background:rgba(255,255,255,0.05);
-  padding:25px;
-  border-radius:12px;
+/* BUTTON */
+.btn{
   margin-top:20px;
+  padding:12px 25px;
+  background:#38bdf8;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+.btn:hover{box-shadow:0 0 25px #38bdf8;}
+
+/* TITLE */
+.title{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:40px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:25px;
 }
 
-h1{font-size:34px;margin-bottom:15px;}
-li{margin:8px 0;}
+/* CARD */
+.card{
+  padding:25px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(12px);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px #38bdf8;
+}
+
+/* TEXT */
+li{margin:8px 0;line-height:1.6;}
+p{line-height:1.7;}
+
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
 
 </style>
 </head>
@@ -103,28 +157,66 @@ li{margin:8px 0;}
 
 <nav>
   <h2>Om Kumbhar</h2>
+  <ul>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#exp">Experience</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#edu">Education</a></li>
+  </ul>
 </nav>
 
+<!-- HERO -->
 <section>
-  <div class="container hero">
-    <h1>Om Kumbhar</h1>
+  <div class="hero fade">
+    <h1>OM KUMBHAR</h1>
     <h2>Finance & Financial Reporting Analyst</h2>
-    <p>Pune, Maharashtra | +91 9172046662 | omkumbhar511@gmail.com</p>
+    <p>Pune, Maharashtra, India • +91 9172046662 • omkumbhar511@gmail.com</p>
+
+    <a href="Om Kumbhar CV.pdf" download>
+      <button class="btn">Download Resume</button>
+    </a>
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <h1>Professional Summary</h1>
+<!-- SUMMARY -->
+<section id="summary">
+  <div class="container fade">
+    <h1 class="title">Professional Summary</h1>
     <div class="card">
       Commerce graduate with experience in financial reporting, accounting documentation, audit support, and compliance processes. Skilled in preparing financial records, supporting regulatory reporting, and analyzing financial data. Strong understanding of Profit & Loss statements, Balance Sheets, accounting controls, and financial analysis. Currently pursuing MBA in Finance and seeking an opportunity as a Financial Analyst.
     </div>
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <h1>Professional Experience</h1>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container fade">
+    <h1 class="title">Core Competencies</h1>
+    <div class="card">
+      Financial Reporting • Regulatory Reporting • Financial Modeling • Financial Forecasting • P&L Analysis • Balance Sheet Analysis • Cash Flow Analysis • Ratio Analysis • Accounting Controls • Financial Data Analysis • Microsoft Excel
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="edu">
+  <div class="container fade">
+    <h1 class="title">Education</h1>
+    <div class="card">
+      <ul>
+        <li>MBA (Finance) – Currently Pursuing<br>Sai Balaji International Institute of Management Science, Pune</li>
+        <li>Bachelor of Commerce (B.Com) – CGPA: 7.53<br>Modern College, Pune – 5</li>
+        <li>Higher Secondary Certificate (HSC) – 84.50%<br>Modern College, Pune – 5</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="exp">
+  <div class="container fade">
+    <h1 class="title">Professional Experience</h1>
 
     <div class="grid">
 
@@ -150,22 +242,22 @@ li{margin:8px 0;}
       </div>
 
       <div class="card">
-        <h3>Freelance Audit Associate | 2023 – Present</h3>
+        <h3>Freelance Audit Associate (Stock & Financial Audit) | Outsourced Assignments | 2023 – Present</h3>
         <ul>
           <li>Assisted multiple firms with stock audits and financial audit assignments.</li>
-          <li>Verified inventory records, stock valuation, and reconciliation.</li>
-          <li>Reviewed financial documents to ensure compliance.</li>
-          <li>Prepared audit documentation.</li>
+          <li>Verified inventory records, stock valuation, and reconciliation of inventory data.</li>
+          <li>Reviewed financial documents to ensure compliance with audit standards.</li>
+          <li>Prepared audit documentation and financial verification reports.</li>
         </ul>
       </div>
 
       <div class="card">
         <h3>Junior Accountant | Sahara Packaging | Mar 2022 – Aug 2022</h3>
         <ul>
-          <li>Maintained accounting records and financial transactions.</li>
-          <li>Assisted in preparation of financial reports.</li>
-          <li>Handled accounts payable and receivable.</li>
-          <li>Ensured documentation.</li>
+          <li>Maintained accounting records and financial transaction documentation.</li>
+          <li>Assisted in preparation of financial reports and ledger reconciliation.</li>
+          <li>Supported accounts payable and accounts receivable processes.</li>
+          <li>Ensured proper maintenance of accounting documentation.</li>
         </ul>
       </div>
 
@@ -173,9 +265,10 @@ li{margin:8px 0;}
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <h1>Finance Project</h1>
+<!-- PROJECT -->
+<section id="project">
+  <div class="container fade">
+    <h1 class="title">Finance Project</h1>
     <div class="card">
       <ul>
         <li>Developed an Excel-based financial analysis and automation model.</li>
@@ -188,48 +281,16 @@ li{margin:8px 0;}
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <h1>Core Competencies</h1>
-    <div class="card">
-      Financial Reporting • Financial Modeling • Forecasting • P&L Analysis • Balance Sheet • Cash Flow • Ratio Analysis • Excel
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h1>Education</h1>
-    <div class="card">
-      <ul>
-        <li>MBA (Finance) – Currently Pursuing, Pune</li>
-        <li>B.Com – CGPA 7.53</li>
-        <li>HSC – 84.5%</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h1>Tools</h1>
-    <div class="card">
-      Microsoft Excel • Tally • Financial Modeling
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h1>Languages</h1>
-    <div class="card">
-      English • Hindi • Marathi
-    </div>
-  </div>
-</section>
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("show");
+    }
+  });
+});
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
-
-
-Is baar main exact fix karunga — guess nahi.
