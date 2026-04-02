@@ -10,6 +10,45 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif;}
 html{scroll-behavior:smooth;}
+  <canvas id="bgCanvas"></canvas>
+
+<script>
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+  particles.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2+1,
+    dx:(Math.random()-0.5),
+    dy:(Math.random()-0.5)
+  });
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  particles.forEach(p=>{
+    p.x+=p.dx;
+    p.y+=p.dy;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle="rgba(56,189,248,0.5)";
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 
 body{
   background:#020617;
@@ -316,14 +355,17 @@ p{line-height:1.7;}
 </section>
 <script>
 const text = document.querySelector(".split-text");
-const letters = text.innerText.split("");
+const content = text.innerText;
 
 text.innerHTML = "";
 
-letters.forEach((letter, i) => {
+content.split("").forEach((letter, i) => {
   const span = document.createElement("span");
-  span.innerText = letter;
-  span.style.animationDelay = i * 0.05 + "s";
+
+  // preserve spaces
+  span.innerHTML = letter === " " ? "&nbsp;" : letter;
+
+  span.style.animationDelay = i * 0.03 + "s";
   text.appendChild(span);
 });
 </script>
