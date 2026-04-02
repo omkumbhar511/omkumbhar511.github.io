@@ -20,8 +20,8 @@ body{
 /* BACKGROUND */
 .bg{
   position:fixed;
-  width:100%;
-  height:100%;
+  width:90%;
+  height:90%;
   z-index:-2;
   background:linear-gradient(-45deg,#020617,#0f172a,#1e293b,#020617);
   background-size:400% 400%;
@@ -91,6 +91,19 @@ section{
 }
 .hero p{
   font-size:20px;
+  .split-text span{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(40px);
+  animation:letterAnim 0.6s forwards;
+}
+
+@keyframes letterAnim{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 }
 
 /* BUTTON */
@@ -156,18 +169,22 @@ p{line-height:1.7;}
 <div class="shape s3"></div>
 
 <nav>
-  <h2>Om Kumbhar</h2>
+ <h2>Om Kumbhar</h2>
   <ul>
+    <li><a href="#home">Home</a></li>
     <li><a href="#summary">Summary</a></li>
-    <li><a href="#exp">Experience</a></li>
-    <li><a href="#project">Project</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Project</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#edu">Education</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#languages">Languages</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<section>
+  <section id="home">
   <div class="hero fade">
     <h1>OM KUMBHAR</h1>
     <h2>Finance & Financial Reporting Analyst</h2>
@@ -293,18 +310,35 @@ p{line-height:1.7;}
     </div>
   </div>
 </section>
-
-
+  <!-- TOOLS -->
+<section id="tools">
+  <div class="container fade">
+    <h1>Tools</h1>
+    <ul>
+      <li>Microsoft Excel</li>
+      <li>Tally</li>
+      <li>Financial Modeling</li>
+    </ul>
+  </div>
+</section>
+  <!-- CONTACT -->
+<section id="contact">
+  <div class="container fade">
+    <h1>Contact</h1>
+    <p>Email: omkumbhar511@gmail.com</p>
+    <p>Phone: +91 9172046662</p>
+  </div>
+</section>
 <script>
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add("show");
-    }
-  });
-});
-document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
-</script>
+const text = document.querySelector(".split-text");
+const letters = text.innerText.split("");
 
-</body>
-</html>
+text.innerHTML = "";
+
+letters.forEach((letter, i) => {
+  const span = document.createElement("span");
+  span.innerText = letter;
+  span.style.animationDelay = i * 0.05 + "s";
+  text.appendChild(span);
+});
+</script>
