@@ -10,45 +10,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif;}
 html{scroll-behavior:smooth;}
-  <canvas id="bgCanvas"></canvas>
-
-<script>
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<80;i++){
-  particles.push({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*2+1,
-    dx:(Math.random()-0.5),
-    dy:(Math.random()-0.5)
-  });
-}
-
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  particles.forEach(p=>{
-    p.x+=p.dx;
-    p.y+=p.dy;
-
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="rgba(56,189,248,0.5)";
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animate);
-}
-
-animate();
-</script>
 
 body{
   background:#020617;
@@ -64,7 +25,7 @@ body{
   z-index:-2;
   background:linear-gradient(-45deg,#020617,#0f172a,#1e293b,#020617);
   background-size:400% 400%;
-  animation:gradient 06s ease infinite;
+  animation:gradient 12s ease infinite;
 }
 @keyframes gradient{
   0%{background-position:0% 50%;}
@@ -75,7 +36,7 @@ body{
 /* SHAPES */
 .shape{
   position:absolute;
-  border-radius:80%;
+  border-radius:50%;
   filter:blur(140px);
   opacity:0.35;
   animation:float 10s infinite ease-in-out;
@@ -103,7 +64,7 @@ nav{
 }
 nav h2{color:#38bdf8;}
 nav ul{display:flex;gap:20px;list-style:none;}
-nav a{color:white;text-decoration:none;font-size:20px;}
+nav a{color:white;text-decoration:none;font-size:14px;}
 nav a:hover{color:#38bdf8;}
 
 /* SECTIONS */
@@ -126,8 +87,10 @@ section{
 }
 .hero h2{
   color:#38bdf8;
-  margin:10px 0;  
+  margin:10px 0;
 }
+.hero p{
+  font-size:16px;
 }
 
 /* BUTTON */
@@ -155,7 +118,7 @@ section{
   gap:25px;
 }
 
-/* Card */
+/* CARD */
 .card{
   padding:25px;
   border-radius:15px;
@@ -169,7 +132,7 @@ section{
 }
 
 /* TEXT */
-li{margin:15px 0;line-height:1.6;}
+li{margin:8px 0;line-height:1.6;}
 p{line-height:1.7;}
 
 .fade{
@@ -193,7 +156,7 @@ p{line-height:1.7;}
 <div class="shape s3"></div>
 
 <nav>
- <h2>Om Kumbhar</h2>
+  <h2>Om Kumbhar</h2>
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#summary">Summary</a></li>
@@ -208,7 +171,7 @@ p{line-height:1.7;}
 </nav>
 
 <!-- HERO -->
-  <section id="home">
+<section>
   <div class="hero fade">
     <h1>OM KUMBHAR</h1>
     <h2>Finance & Financial Reporting Analyst</h2>
@@ -321,38 +284,33 @@ p{line-height:1.7;}
     </div>
   </div>
 </section>
-  <!-- HOBBIES -->
-<section id="Hobbies">
+  <!-- TOOLS -->
+<section id="project">
   <div class="container fade">
-    <h1 class="title">Hobbies</h1>
+    <h1 class="title">Tools</h1>
     <div class="card">
       <ul>
-        <li>Photography</li>
-        <li>Gaming</li>
-        
+       <li>Microsoft Excel</li>
+      <li>Tally</li>
+      <li>Financial Modeling</li>
       </ul>
     </div>
   </div>
 </section>
-  <!-- TOOLS -->
-<section id="tools">
+  <!-- Contact -->
+<section id="Contact">
   <div class="container fade">
-    <h1>Tools</h1>
-    <ul>
-      <li>Microsoft Excel</li>
-      <li>Tally</li>
-      <li>Financial Modeling</li>
-    </ul>
-  </div>
-</section>
-  <!-- CONTACT -->
-<section id="contact">
-  <div class="container fade">
-    <h1>Contact</h1>
+    <h1 class="title">Contact</h1>
+    <div class="card">
+      <ul>
+       <h1>Contact</h1>
     <p>Email: omkumbhar511@gmail.com</p>
     <p>Phone: +91 9172046662</p>
+      </ul>
+    </div>
   </div>
 </section>
+
 <script>
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
@@ -362,5 +320,7 @@ const observer=new IntersectionObserver(entries=>{
   });
 });
 document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
-});
 </script>
+
+</body>
+</html>
