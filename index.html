@@ -1,338 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Om Kumbhar | Financial Analyst</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om Kumbhar | Financial Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
---bg:#070b14;
---text:#e6edf9;
---muted:#a7b4ca;
---primary:#f97316;
---border:#243149;
---max:72rem;
-}
+  <style>
+    :root {
+      --bg: #070b14;
+      --surface: #121a2a;
+      --surface-2: #19233a;
+      --text: #e6edf9;
+      --muted: #a7b4ca;
+      --primary: #f97316;
+      --primary-hover: #fb8d3a;
+      --border: #243149;
+      --max-width: 72rem;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body{
-font-family:"Outfit",sans-serif;
-background:var(--bg);
-color:var(--text);
-overflow-x:hidden;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* PARTICLES */
-#particles{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
+    body {
+      font-family: "Outfit", sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, #111a2d 0%, transparent 40%),
+        radial-gradient(circle at 90% 20%, #1d1631 0%, transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-/* NAV */
-header{
-position:sticky;
-top:0;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-border-bottom:1px solid var(--border);
-z-index:100;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-height:60px;
-}
+    .container {
+      width: min(100% - 2rem, var(--max-width));
+      margin-inline: auto;
+    }
 
-.container{
-width:min(100% - 2rem, var(--max));
-margin:auto;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 11, 20, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
 
-.brand span{color:var(--primary);}
+    .nav {
+      min-height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
-/* HERO */
-.hero{
-text-align:center;
-padding:80px 0;
-}
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
 
-h1{
-font-size:clamp(2rem,5vw,3.2rem);
-}
+    .brand span {
+      color: var(--primary);
+    }
 
-.hero p{color:var(--muted);margin-top:10px;}
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 1rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
 
-/* BUTTON */
-.btn{
-padding:10px 18px;
-border-radius:8px;
-border:none;
-cursor:pointer;
-font-weight:600;
-margin-top:20px;
-background:linear-gradient(135deg,#f97316,#fb923c);
-color:#1d1207;
-}
+    main {
+      padding-block: 1.75rem 3.5rem;
+    }
 
-/* SECTION */
-section{padding:60px 0;}
+    section {
+      padding-block: 2.5rem;
+    }
 
-h2{margin-bottom:20px;}
+    .hero {
+      padding-top: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
 
-/* CARD */
-.card{
-position:relative;
-padding:20px;
-border-radius:12px;
-border:1px solid var(--border);
-background:rgba(255,255,255,0.03);
-transition:0.4s;
-overflow:hidden;
-}
+    h1 {
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      line-height: 1.15;
+    }
 
-.card::before{
-content:'';
-position:absolute;
-width:300px;
-height:300px;
-background:radial-gradient(circle, rgba(249,115,22,0.25), transparent);
-top:var(--y);
-left:var(--x);
-transform:translate(-50%,-50%);
-opacity:0;
-transition:0.3s;
-}
+    .hero p {
+      color: var(--muted);
+      max-width: 48ch;
+    }
 
-.card:hover{
-transform:translateY(-10px) scale(1.02);
-box-shadow:0 20px 50px rgba(0,0,0,0.5);
-}
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
 
-.card:hover::before{opacity:1;}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 0.65rem;
+      padding: 0.72rem 1rem;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
 
-.card{
-animation:float 6s ease-in-out infinite;
-}
+    .btn-primary {
+      background: var(--primary);
+      color: #1d1207;
+    }
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-6px);}
-100%{transform:translateY(0);}
-}
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
 
-/* LIST */
-li{margin:6px 0;color:var(--muted);}
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
 
-/* REVEAL */
-.reveal{
-opacity:0;
-transform:translateY(20px);
-transition:0.6s;
-}
-.reveal.show{
-opacity:1;
-transform:translateY(0);
-}
+    h2 {
+      font-size: clamp(1.35rem, 4vw, 1.8rem);
+      margin-bottom: 1rem;
+    }
 
-/* FORM */
-form{
-display:flex;
-flex-direction:column;
-gap:10px;
-}
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem;
+    }
 
-input,textarea{
-padding:10px;
-border-radius:6px;
-border:none;
-background:#121a2a;
-color:white;
-}
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
 
-/* FOOTER */
-footer{
-margin-top:40px;
-padding:20px 0;
-text-align:center;
-color:var(--muted);
-}
+    .list {
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+      color: var(--muted);
+    }
 
-</style>
+    .chip-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip-list li {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: #d3def0;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-link {
+      color: var(--primary);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: text-decoration-color 0.2s ease;
+    }
+
+    .contact-link:hover {
+      text-decoration-color: var(--primary);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-block: 1rem 2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+
+      section {
+        padding-block: 3rem;
+      }
+
+      .grid.two-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">Om <span>Kumbhar</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
-<canvas id="particles"></canvas>
+  <main id="home" class="container">
+    <section class="hero reveal">
+      <p class="eyebrow">Financial Analyst</p>
+      <h1>Finance and Reporting Analyst Focused on Accuracy, Clarity, and Compliance</h1>
+      <p>
+        Pune, Maharashtra, India. I support reporting, audit documentation, and financial analysis to help teams make
+        confident decisions.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1kDhoMn_BeiODuU3HwTZgndYi3xwyoWPi/view" target="_blank" rel="noopener noreferrer">View Resume</a>
+        <a class="btn btn-secondary" href="#contact">Contact Me</a>
+      </div>
+    </section>
 
-<header>
-<div class="container nav">
-<div class="brand">Om <span>Kumbhar</span></div>
-</div>
-</header>
+    <section id="about" class="reveal">
+      <h2>Professional Summary</h2>
+      <div class="card">
+        <p class="meta">
+          Commerce graduate with experience in financial reporting, accounting documentation, audit support, and
+          compliance processes. Currently pursuing an MBA in Finance and looking for Financial Analyst opportunities.
+        </p>
+      </div>
+    </section>
 
-<main class="container">
+    <section id="experience" class="reveal">
+      <h2>Experience</h2>
+      <div class="grid two-col">
+        <article class="card">
+          <h3>Audit Intern</h3>
+          <p class="meta">SANY Heavy Industry Pvt. Ltd. | Jul 2025 - Sep 2025</p>
+          <ul class="list">
+            <li>Assisted audit team in reviewing financial records and accounting documentation.</li>
+            <li>Supported verification of financial statements and accounting entries.</li>
+            <li>Performed financial data analysis and audit documentation.</li>
+            <li>Ensured compliance and accuracy of financial records.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Junior Executive</h3>
+          <p class="meta">Prashant Pange & Associates | Jan 2024 - Jun 2025</p>
+          <ul class="list">
+            <li>Assisted in financial reporting and accounting documentation for multiple clients.</li>
+            <li>Supported preparation of Profit and Loss statements and balance sheet reports.</li>
+            <li>Handled compliance documentation and return filing processes.</li>
+            <li>Maintained financial records ensuring accuracy and regulatory compliance.</li>
+            <li>Performed financial data reconciliation and verification of accounting entries.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Freelance Audit Associate (Stock and Financial Audit)</h3>
+          <p class="meta">Outsourced Assignments | 2023 - Present</p>
+          <ul class="list">
+            <li>Assisted multiple firms with stock audits and financial audit assignments.</li>
+            <li>Verified inventory records, stock valuation, and reconciliation of inventory data.</li>
+            <li>Reviewed financial documents to ensure compliance with audit standards.</li>
+            <li>Prepared audit documentation and financial verification reports.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Junior Accountant</h3>
+          <p class="meta">Sahara Packaging | Mar 2022 - Aug 2022</p>
+          <ul class="list">
+            <li>Maintained accounting records and financial transaction documentation.</li>
+            <li>Assisted in preparation of financial reports and ledger reconciliation.</li>
+            <li>Supported accounts payable and accounts receivable processes.</li>
+            <li>Ensured proper maintenance of accounting documentation.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-<!-- HERO -->
-<section class="hero reveal">
-<h1>Finance & Financial Reporting Analyst</h1>
-<p>Pune, Maharashtra • +91 9172046662 • omkumbhar511@gmail.com</p>
-<button class="btn">Download Resume</button>
-</section>
+    <section id="education" class="reveal">
+      <h2>Education</h2>
+      <div class="grid two-col">
+        <article class="card">
+          <h3>MBA (Finance)</h3>
+          <p class="meta">Currently Pursuing | Sai Balaji International Institute of Management Science, Pune</p>
+        </article>
+        <article class="card">
+          <h3>Bachelor of Commerce (B.Com)</h3>
+          <p class="meta">CGPA: 7.53 | Modern College, Pune</p>
+        </article>
+        <article class="card">
+          <h3>Higher Secondary Certificate (HSC)</h3>
+          <p class="meta">84.50% | Modern College, Pune</p>
+        </article>
+      </div>
+    </section>
 
-<!-- SUMMARY -->
-<section class="reveal">
-<h2>Professional Summary</h2>
-<div class="card">
-Commerce graduate with experience in financial reporting, audit support and compliance processes. Skilled in financial data analysis and reporting.
-</div>
-</section>
+    <section id="projects" class="reveal">
+      <h2>Finance Project</h2>
+      <article class="card">
+        <ul class="list">
+          <li>Developed an Excel-based financial analysis and automation model.</li>
+          <li>Prepared Profit and Loss, Balance Sheet, and Cash Flow projections.</li>
+          <li>Built forecasting models, ratio analysis, and trend evaluation charts.</li>
+          <li>Designed an interactive financial dashboard in Excel.</li>
+        </ul>
+      </article>
+    </section>
 
-<!-- EXPERIENCE -->
-<section class="reveal">
-<h2>Experience</h2>
-<div class="grid">
+    <section id="tools" class="reveal">
+      <h2>Tools</h2>
+      <ul class="chip-list">
+        <li>Microsoft Excel</li>
+        <li>Tally</li>
+        <li>Financial Modeling</li>
+      </ul>
+    </section>
 
-<div class="card">
-<h3>Audit Intern</h3>
-<ul>
-<li>Reviewed financial records</li>
-<li>Verified accounting entries</li>
-<li>Supported audit documentation</li>
-</ul>
-</div>
+    <section id="skills" class="reveal">
+      <h2>Core Skills</h2>
+      <ul class="chip-list">
+        <li>Financial Reporting</li>
+        <li>P&L Analysis</li>
+        <li>Balance Sheet Analysis</li>
+        <li>Cash Flow Analysis</li>
+        <li>Financial Modeling</li>
+        <li>Forecasting</li>
+        <li>Regulatory Compliance</li>
+        <li>Microsoft Excel</li>
+      </ul>
+    </section>
 
-<div class="card">
-<h3>Junior Executive</h3>
-<ul>
-<li>Prepared financial reports</li>
-<li>Handled compliance</li>
-<li>Performed reconciliation</li>
-</ul>
-</div>
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><strong>Email:</strong> <a class="contact-link" href="mailto:omkumbhar511@gmail.com">omkumbhar511@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a class="contact-link" href="tel:+919172046662">+91 9172046662</a></p>
+      </div>
+    </section>
+  </main>
 
-<div class="card">
-<h3>Freelance Audit Associate</h3>
-<ul>
-<li>Stock audits</li>
-<li>Inventory verification</li>
-<li>Financial review</li>
-</ul>
-</div>
+  <footer>
+    <div class="container">Om Kumbhar | Finance and Financial Reporting Analyst</div>
+  </footer>
 
-<div class="card">
-<h3>Junior Accountant</h3>
-<ul>
-<li>Maintained records</li>
-<li>Handled transactions</li>
-<li>Ledger reconciliation</li>
-</ul>
-</div>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.15 });
 
-</div>
-</section>
-
-<!-- PROJECT -->
-<section class="reveal">
-<h2>Finance Project</h2>
-<div class="card">
-Built Excel dashboard with forecasting, ratio analysis and financial insights.
-</div>
-</section>
-
-<!-- SKILLS -->
-<section class="reveal">
-<h2>Skills</h2>
-<div class="card">
-Financial Reporting • Excel • Modeling • Forecasting • Analysis
-</div>
-</section>
-
-<!-- CONTACT -->
-<section class="reveal">
-<h2>Contact</h2>
-
-<div class="grid">
-
-<div class="card">
-<p>Email: omkumbhar511@gmail.com</p>
-<p>Phone: +91 9172046662</p>
-</div>
-
-<div class="card">
-<form>
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<textarea placeholder="Message"></textarea>
-<button class="btn">Send</button>
-</form>
-</div>
-
-</div>
-</section>
-
-</main>
-
-<footer>
-Om Kumbhar Portfolio
-</footer>
-
-<script>
-// reveal
-const obs=new IntersectionObserver(e=>{
-e.forEach(x=>{
-if(x.isIntersecting)x.target.classList.add("show");
-});
-});
-document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
-
-// glow
-document.querySelectorAll(".card").forEach(card=>{
-card.addEventListener("mousemove",e=>{
-const r=card.getBoundingClientRect();
-card.style.setProperty("--x",(e.clientX-r.left)+"px");
-card.style.setProperty("--y",(e.clientY-r.top)+"px");
-});
-});
-
-// particles
-const c=document.getElementById("particles");
-const ctx=c.getContext("2d");
-c.width=innerWidth;
-c.height=innerHeight;
-
-let p=[];
-for(let i=0;i<70;i++){
-p.push({x:Math.random()*c.width,y:Math.random()*c.height,r:2,dx:Math.random()-0.5,dy:Math.random()-0.5});
-}
-
-function anim(){
-ctx.clearRect(0,0,c.width,c.height);
-p.forEach(a=>{
-a.x+=a.dx;a.y+=a.dy;
-ctx.beginPath();
-ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
-ctx.fillStyle="orange";
-ctx.fill();
-});
-requestAnimationFrame(anim);
-}
-anim();
-</script>
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
 
 </body>
-</html>
+</html003E
+
+
+
+
